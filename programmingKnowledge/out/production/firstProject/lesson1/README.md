@@ -106,5 +106,50 @@ public static void main(String[] args) {
     System.out.prinln("Answer is:" + answer);
 }  // returns Answer is: 35
 ```
-The way we do subtraction and multiplication, are the same. But when we want to do division, because the result can be decimal, we should declare the answer as double.
+The way we do subtraction and multiplication, are the same. But when we want to do division, because the result can be decimal, we should declare all variables as double.
+
+We also have the remainder of division. we show it by %. Like Python. (x % y)
+
+#### Incrementation:
+
+When we want to increment the value of x by 1 we just need to say `x++` like PHP or js, etc.
+
+- In this case, Java will return x+1 for the next use of x, but sometime we want the incrementation to be implemented into the current x use, if that's the case, we need to say `++X`.
+
+- Also like other languages, x += 5 means x = x + 5
+- Similarly, x *= 5, means x = x * 5
+- And x/=5 means x = x/5, and x-= 5 means x = x - 5
+
+
+#### Conditional Statements:
+
+__IF STATEMENT:__ is exactly like PHP.
+
+#### Logical Operators:
+
+In case of having AND and OR in java, we use these:
+```
+&& for AND
+|| for OR
+```
+
+#### Switch/Case conditions:
+
+Here is the syntax for multiple conditions that we use switch/case.
+```
+int score = 90;
+          switch (score)
+          {
+              case 90:
+                  System.out.println("VERY GOOD");
+                  break;
+              case 60:
+                  System.out.println("GOOD");
+                  break;
+              case 30:
+                  System.out.println("OK");
+          }
+```
+
+
 

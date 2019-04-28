@@ -125,6 +125,52 @@ When we want to increment the value of x by 1 we just need to say `x++` like PHP
 
 __IF STATEMENT:__ is exactly like PHP.
 
+#### Logical Operators:
+
+In case of having AND and OR in java, we use these:
+```
+&& for AND
+|| for OR
+```
+
+#### Switch/Case conditions:
+
+Here is the syntax for multiple conditions that we use switch/case.
+```
+int score = 90;
+          switch (score)
+          {
+              case 90:
+                  System.out.println("VERY GOOD");
+                  break;
+              case 60:
+                  System.out.println("GOOD");
+                  break;
+              case 30:
+                  System.out.println("OK");
+              default:
+                  System.out.println("NO CASE IS TRUE")                      
+          }
+```
+We can also define the default situation where none of the cases are true.
+
+When we want to multiple conditions, to do the same thing, we just mention like this:
+```
+    case 100:
+    case 90:
+    case 110:
+        System.out.println("VERY GOOD")
+```
+All three values return the same response.
+
+#### Arrays in JAVA:
+Here is how we declare and define integer arrays:
+```
+int[] myArray = {1,2,3,4,5}
+or 
+int myArray[] = {1,2,3,4,5}
+```    
+The first way is more recommended.
 
 
 

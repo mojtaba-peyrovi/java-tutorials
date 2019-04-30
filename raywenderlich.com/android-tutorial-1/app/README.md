@@ -21,6 +21,72 @@ __Positioning:__ When we put controls on the screen, we can add `Rules` to them.
 The default label that came with the app and said `Hello World` had the rules, and we saw them as spring looking shapes.
 
 
+#### String Resources:
+When we hardcode titles or any text, Android studio gives notifications, (yellow triangles with exclamation point) to say that it wouldn't work with other languages. In order to fix it, we need to add the text values to something called `string resources`.
+
+We do it this way: 
+
+Select the label, then from the right sidebar copy the value, then click the dropdown button next to the value, and it opens all resources. Now, we add a new resource and add the copied value as the `resource value`. This way, the text will be added to resources and later on, we can translate it to different languages using `strings.xml.`
+
+If we go to this file:
+```
+app\res\values\strings.xml
+```
+we can see the values we added to resources, are already added to the xml file:
+```
+<string name="your_score">Your Score: %s</string>
+<string name="time_left">Time Left: %s</string>
+```
+
+It works also if we type directly inside the xml file.
+
+#### Activity:
+
+Each Android app consists of a bunch of screens doing different things. Each of these actions are called an `activity.` So, an activity is an action that the user of the app may perform. e.g. Logging in, the setting screen is another activity, the account detail screen is another activity.
+
+The main app logic that will be written in Kotlin, is stored at:
+```
+app\java\com.example.APP_NAME\MainActivity.tk
+```
+This code comes with the following items:
+
+1) Package name: which is a group of codes and it is almost like the identifier of the code.
+2) import: which is reporting other classes.
+3) class definition: It is declaring `MainActivity` class, that extends the class `AppMainActivity()`.
+4) overriding onCreate function (method). `fun means function`. onCreate method is the entry point of the code.
+
+__R File:__ R file is a resource file Android generates which we can access all the resources through it. 
+
+At the last line of the Kotlin code, we see that we set the content view to `activity_main.xml` which is the address of the UI.
+
+#### Android Manifest: 
+
+Every Android app, has a file called `android.manifest.xml` that shows that which activity is shown first, what are available activities, etc.
+
+It is located here:
+```
+app\manifests
+``` 
+
+#### Adding some logic:
+
+Inside `mainActivity.tk`, on the top of the class, we declare the button, and the score textView like this:
+```   
+
+internal lateinit var tapMeButton: Button    // Button class should be imported on the top
+internal lateinit var gameScoreTextView : TextView   // TextView class should be imported on the top
+
+```
+And inside onCreate() method, we can add this:
+
+```
+tapMeButton = findViewById<Button>(R.id.tap_btn)   // here we linked the variable, to our tap_btn control on the UI
+```
+
+
+
+
+
 
 
 

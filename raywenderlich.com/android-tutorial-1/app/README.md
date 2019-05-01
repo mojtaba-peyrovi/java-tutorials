@@ -75,13 +75,68 @@ Inside `mainActivity.tk`, on the top of the class, we declare the button, and th
 
 internal lateinit var tapMeButton: Button    // Button class should be imported on the top
 internal lateinit var gameScoreTextView : TextView   // TextView class should be imported on the top
+internal lateinit var gameScoreTextView : TextView
 
 ```
 And inside onCreate() method, we can add this:
 
 ```
 tapMeButton = findViewById<Button>(R.id.tap_btn)   // here we linked the variable, to our tap_btn control on the UI
+gameScoreTextView = findViewById<TextView>(R.id.game_score_text_view)
+timeLeftTextView = findViewById<TextView>(R.id.time_left_text_view)
 ```
+
+##### REMINDER:
+
+In oop terminology, data object is named `property` and action object is named `method`.
+
+For example in MainActivity() class, the button and two textViews are properties and onCreate() is method.
+
+In Java, here is how we define variables and constants:
+```
+var my_var = "player one";   // variables
+
+val my_val = 123;   // constants
+
+```
+For making the app work, we need to create a click listener for the button we made, and the best place for it, is inside onCreate() method.
+
+Here is the whole code so far inside MainActivity.tk:
+```
+
+    internal lateinit var tapMeButton: Button
+    internal lateinit var gameScoreTextView : TextView
+    internal lateinit var timeLeftTextView: TextView
+    internal var score = 0
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        tapMeButton = findViewById<Button>(R.id.tap_btn)
+        gameScoreTextView = findViewById<TextView>(R.id.game_score_text_view)
+        gameScoreTextView.text = getString(R.string.your_score, score.toString())
+        timeLeftTextView = findViewById<TextView>(R.id.time_left_text_view)
+        tapMeButton.setOnClickListener {
+            view ->
+            incrementScore()
+        }
+    }
+
+    private fun incrementScore() {
+       score += 1
+       val newScore = getString(R.string.your_score, score.toString())
+       gameScoreTextView.text = newScore
+
+    }
+```
+This line:
+```
+gameScoreTextView.text = getString(R.string.your_score, score.toString())
+```
+is used to initialize the score of zero instead of having %s.
+
+
+
+
 
 
 

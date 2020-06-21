@@ -1,5 +1,4 @@
-## JAVA Basics
----
+JAVA Basics ---
 
 Source: [ProgrammingKnowledge Youtube Channel](https://www.youtube.com/watch?v=r59xYe3Vyks&list=PLS1QulWo1RIbfTjQvTdj8Y6yyq4R7g-Al).
 
@@ -172,6 +171,28 @@ int myArray[] = {1,2,3,4,5}
 ```    
 The first way is more recommended.
 
+#### For Loops:
+In order to make it, inside for we need to add three things: 
+	- init
+	- expression
+	- incrementation
+example: 
+```
+public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] myintarray = {123,45,76,56,34};
+		for (int index=0; index < 5; index++)
+		{
+			System.out.println(myintarray[index]);
+		}
+```
+the code above prints the first five values inside the array **myintarray.**
 
-
-
+An easier way, is to say:
+```
+for(int element : myintarray)
+		{
+			System.out.println(element);
+		}
+```
+it does the same thing.

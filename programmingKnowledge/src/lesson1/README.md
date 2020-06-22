@@ -1,4 +1,4 @@
-JAVA Basics ---
+VA Basics ---
 
 Source: [ProgrammingKnowledge Youtube Channel](https://www.youtube.com/watch?v=r59xYe3Vyks&list=PLS1QulWo1RIbfTjQvTdj8Y6yyq4R7g-Al).
 
@@ -196,3 +196,26 @@ for(int element : myintarray)
 		}
 ```
 it does the same thing.
+
+### Strings in JAVA:
+to declare a string we just mention String in the beginning of the line:
+```
+String myString = "hello world..."
+```
+**length() function:** it returns the length of the string. e.g. myString.length() 
+**toLowercase():** makes all characters lowercase.
+**toUppercase():** makes all characters uppercase.
+**Concatenation:** in order to concat strings we use + just like python.
+**Replace:** we can replace a character with another one like this:
+```
+newString = mystring.replace(oldValue, newValue)
+```
+### Defining Methods:
+methods are similar to python. we do this way:
+```
+public static void testMethod(){
+// TODO:blah blah
+}
+```
+in this example **void** means the method does not return anything.
+when we want to run the method, we can call it inside the main method and it will execute.

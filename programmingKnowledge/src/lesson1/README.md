@@ -1,4 +1,4 @@
-VA Basics ---
+JAVA Basics ---
 
 Source: [ProgrammingKnowledge Youtube Channel](https://www.youtube.com/watch?v=r59xYe3Vyks&list=PLS1QulWo1RIbfTjQvTdj8Y6yyq4R7g-Al).
 
@@ -219,3 +219,96 @@ public static void testMethod(){
 ```
 in this example **void** means the method does not return anything.
 when we want to run the method, we can call it inside the main method and it will execute.
+
+### Passing parameters to methods:
+It is not so different from Python, we just need to declare the datatype inside the bracket for each parameter. example:
+```
+public static void add(int a, int b) {
+		System.out.println(a+b);
+	}
+```
+If the method doesn't return anything we use the keyword **void,** but if we want the function to return something, we need to declare the type of the value we want the function to return.	 Then we can assign the returned value of the method to another variable. Here is the method:
+```
+public static int add(int a, int b) {
+		return(a+b);
+	}
+```
+inside the main function:
+```
+public static void main() {
+		int sum = addition(12,14);
+		System.out.println(sum);
+	}
+Output: 26	
+```
+### Classes and Objects
+Now let's create two classes, one is Classes, one is Students. inside Student class, we declare id, name, age. 	
+Then inside the main class of the other class(Classes) we can create a new student like this:
+```
+package lesson1;
+
+public class Classes {
+	public static void main(String[] args) {
+		Student mark = new Student();
+	}
+}
+```
+Now mark is an object on instance of student class. now the variables we declared inside Students class, will be accessible by . as the object's property. like this:
+```
+public class Classes {
+	public static void main(String[] args) {
+		Students mark = new Students();
+		
+		mark.id = 1;
+		mark.name = "Mark";
+		mark.age = 15;
+		System.out.println(mark.name +" " + mark.age);
+	}
+}
+output: Mark 15
+```
+In programming its not a good practice to directly define the properties. instead, in Java we use Getter and Setter methods, that we can add to Students class. (select one of the properties like Id, then go under Source tab and find "Generate Getters and Setters" then select all, then we have a bunch of getter and setter methods. like this:
+```
+public class Students {
+	int id;
+	String name;
+	int age; 
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+}
+```
+Using this approach, we instead of saying mark.id = 1, we say:
+mark.setId(1)
+
+#### This technique is called Encapsulating a variable.
+We do this because we don't want any other users to access our object properties directly and manipulate them.
+This is how the Classes class looks like calling get and set methods:
+```
+public class Classes {
+	public static void main(String[] args) {
+		Students mark = new Students();
+		
+		mark.setId(1);
+		mark.setName("Mark");
+		mark.setAge(15);
+		System.out.println(mark.getName() +" " + mark.getAge());
+	}
+}
+```
+

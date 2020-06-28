@@ -24,11 +24,20 @@ public class myClass {
      /*
         When user inputs A STRING:
       */
-        Scanner scan_two = new Scanner(System.in);
-        System.out.println("Enter Some String:");
-        String user_input_string = scan_two.nextLine();
-        System.out.println("The Entered String is:");
-        System.out.println(user_input_string);
+//        Scanner scan_two = new Scanner(System.in);
+//        System.out.println("Enter Some String:");
+//        String user_input_string = scan_two.nextLine();
+//        System.out.println("The Entered String is:");
+//        System.out.println(user_input_string);
+    /* importing the cllass cube from video 19:
+     * 	
+     */
+    Cube cube1 = new Cube();    	
+    	System.out.println(cube1.getCoubeVolume());
+        Cube cube2 = new Cube(20,20,20);
+        System.out.println(cube2.getCoubeVolume());
     }
 
 }
+   
+

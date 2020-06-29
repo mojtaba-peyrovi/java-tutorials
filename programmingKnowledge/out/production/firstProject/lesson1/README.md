@@ -311,3 +311,49 @@ public class Classes {
 	}
 }
 ```
+### Class construction:
+We created a class called Cube, and within that class we simply make a function that takes the three dimensions of a cube, and multiply them together to calculate the volume.
+Then in a new class we can call this class in.	for example in MyClass class, we will import the Cube class like this:
+~~~
+Cube cube1 = new Cube();  
+~~~
+the Cube() is the constructor that Java creates automatically if we don't explicitly define a constructor. 
+- The constructor name is exactly the same as the class name.
+- constructor method will NEVER return any value.
+- Any time we instantiate a class, the first method in the class to run, will be the constructor method.
+Here is an example constructor we can define in Cube method for just passing the default dimensions.
+```
+Cube() {
+	length = 10;
+	bredth = 20;
+	height = 30;
+}
+```
+and whenever inside MyClass we instantiate Cube, we will get the default volume calculations. Like this:
+```
+Cube cube1 = new Cube();    	
+    	System.out.println(cube1.getCoubeVolume());
+    }
+```
+#### Constructor Overlading:
+It means we can define as many constructors as we want. and it will overwrite the former one anytime we instantiate the class. For example in Cube class we define a new constructor:
+```
+Cube(int l, int b, int h) {
+		length = l;
+		bredth = b;
+		height = h;
+	}
+```
+and in MyClass main method:
+```
+        Cube cube2 = new Cube(20,20,20);
+        System.out.println(cube2.getCoubeVolume());
+```
+### Method Overloading:
+We can define multiple methods with the same name inside a class. for example we can have add method three times, and the first one receives int, second one double, and the third one string.  Then we can call the method and pass int parameter, then Java will automatically trigger the method accepting integer, or if we pass strings it will trigger the method with strings.
+
+
+
+
+
+

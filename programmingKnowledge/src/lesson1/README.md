@@ -415,5 +415,71 @@ The keyword Final can be used for class, method, or variables. for each one of t
 | Variable | A variable can only be initialized once
 
 
+### Class Inheritance in Java:
+We can extend a class in Java, by creating new classes that inherit the characteristics from the parent class. 
+For example, if we want to calculate the area of different basic shapes like triangle, rectangle, etc. we can first create a parent class called polygons, because both triangles and rectangles are polygons and the same properties can be pulled into them from the polygon class, like height and width.
+I made three classes named Polygon, Rectangle, and Triangle. 
+Inside Polygon class we declared two variables width and height, and by defining a set_values method we set the values of a and b by user to be the height and width. like this:
+```
+public class Polygon {
+	protected int height;
+	protected int width;
+	
+	public void set_values(int a, int b) {
+		height = a;
+		width = b;
+	}
+}
+```
+Now we want the rectangle class to inherit from Polygon we just need to say:
+```
+public class Retangle extends Polygon{
+
+}
+```
+sometimes we call Polygon the **Base** or **Derived** class , and the Rectangle class, **Deriving** class.
+Once we inherit a class to another, all protected and public properties are accessible in the deriving class.
+Inside triangle and rectangle classes, we add methods to calculate and return the area.
+Now, under MyClass, we can instantiate the classes and return the areas saying:
+```
+Retangle rec = new Retangle();
+    	Triangle tri = new Triangle();
+    	
+    	rec.set_values(10,10);
+    	tri.set_values(10,10);
+    	
+    	System.out.println(rec.area());
+    	System.out.println(tri.area());
+```
+### Polymorphism in Java:
+It means the concept of an object being able to act in different forms. 
+Example:
+In the workspace, we create four classes. Bank has the interest rate of zero, Bank_ABC has the rate of 5, Bank_DEF has the rate of 6, and Bank_XYZ has 10, and all of the last three inherit from Bank class.
+```
+public class Bank_ABC extends Bank {
+	int getInterestRate() {
+		return 5;
+	}
+}
+```
+
+Now, when we want to instantiate a new Bank class, it can be in the form of Bank_ABC. like this:
+```
+Bank abc = new Bank_ABC();
+```
+This is called Polyorphism. But remember, then Bank has to be inherited inside Bank_ABC class.
+Now we can access getInterestRate() method of each class like this:
+```
+    	Bank abc = new Bank_ABC();
+    	Bank def = new Bank_DEF();
+    	Bank xyz = new Bank_XYZ();
+    	
+    	System.out.println(abc.getInterestRate());
+    	System.out.println(def.getInterestRate());
+    	System.out.println(xyz.getInterestRate());
+output: 5,6,10
+```
+
+
 
 

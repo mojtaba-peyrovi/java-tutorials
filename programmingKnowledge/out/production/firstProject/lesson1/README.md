@@ -352,7 +352,67 @@ and in MyClass main method:
 ### Method Overloading:
 We can define multiple methods with the same name inside a class. for example we can have add method three times, and the first one receives int, second one double, and the third one string.  Then we can call the method and pass int parameter, then Java will automatically trigger the method accepting integer, or if we pass strings it will trigger the method with strings.
 
+### Static methods:
+static members belong to the class instead of a specific instance. When we instantiate a class, if the method inside the class, is static, we can access it by . but if it's not static, we cannot access it. like the following methods:
+```
+public class Hello {
+	public static String DoSomething(String message) {
+		return message;
+	}
+	
+	public String DoSomethingElse(String message) {
+		return message;
+	}
+}
+```
+If we instantiate the class like this:
+```
+Hello hi = new Hello();
+```
+we can access the method DoSomething from the class itself like this:
+```
+Hello.DoSomething("hello world");
+```
+but the second method cannot be accessed from the class because it's not static.
+Instead, if we want to access doSomethingElse(), we can access it from the instance. like this:
+```
+Hello hi = new Hello();
+hi.DoSomethingElse("hello world");
+```
+We have the same story for variables too. we can define a variable as:
+```
+public class Hello() {
+public static int Age;
+}
+** we can access Age from the class diretly by saying:
+Hello hi = new Hello();
+Hello.age = 10;
+```
+### Java Access Modifiers(public, private, protected,etc.):
+Here is the summary of access levels :
+**public:** (class:yes, package:yes, subclass:yes, world:yes)
+**protected:** (class:yes, package:yes, subclass:yes, world:no)
+**no modifier:** (class:yes, package:yes, subclass:no, world:no)
+**private:** (class:yes, package:no, subclass:no, world:no)
+|Modifier| Class | Package| subClass | World	
+|--|--| -- | -- | -- |
+| Public|	Y |	Y| Y	|	Y		
+|Protected	Y	| 	Y	|	 Y |	Y	| N
+|no modifier | Y |	Y	| N | N 
+| Private | Y	| N	| 	N	 | N
 
+A good practice for variables which are being used only inside the class, to be private or protected.
+
+### Final keyword in Java:
+Example: 
+> public final  int exmp;
+
+The keyword Final can be used for class, method, or variables. for each one of them it means differently.
+| Item	 |Meaning  |
+|--|--|
+| Class | A final class cannot be subclassed  |
+| Method| A final method cannot be overwritten by a subclass
+| Variable | A variable can only be initialized once
 
 
 

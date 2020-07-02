@@ -32,11 +32,30 @@ public class myClass {
     /* importing the cllass cube from video 19:
      * 	
      */
-    Cube cube1 = new Cube();    	
-    	System.out.println(cube1.getCoubeVolume());
-        Cube cube2 = new Cube(20,20,20);
-        System.out.println(cube2.getCoubeVolume());
-    }
+//    Cube cube1 = new Cube();    	
+//    	System.out.println(cube1.getCoubeVolume());
+//        Cube cube2 = new Cube(20,20,20);
+//        System.out.println(cube2.getCoubeVolume());
+//    }
+    	
+//    	Retangle rec = new Retangle();
+//    	Triangle tri = new Triangle();
+//    	
+//    	rec.set_values(10,10);
+//    	tri.set_values(10,10);
+//    	
+//    	System.out.println(rec.area());
+//    	System.out.println(tri.area());
+//    	
+//  
+    	Bank abc = new Bank_ABC();
+    	Bank def = new Bank_DEF();
+    	Bank xyz = new Bank_XYZ();
+    	
+    	System.out.println(abc.getInterestRate());
+    	System.out.println(def.getInterestRate());
+    	System.out.println(xyz.getInterestRate());
+    }  	
 
 }
    

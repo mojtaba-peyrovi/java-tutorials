@@ -479,6 +479,80 @@ Now we can access getInterestRate() method of each class like this:
     	System.out.println(xyz.getInterestRate());
 output: 5,6,10
 ```
+### Method Overriding:
+In the example of the Banks super class, and sub-classes of Bank_ABC, etc. if the sub-classes just extend the super-class Bank, anytime we create an instance of Bank_ABC() using the reference of Bank class, it inherits the properties of the Bank class.
+
+Now, we can override the properties on Bank_ABC class, and when we create the instance, it will inherit from Bank_ABC. For example, Bank class returned interest rate of 0. we can override it defining the interest rate of 5 in Bank_ABC, and it will return 5.
+
+**Rules of Overriding:** 
+- you must have same amount of arguments.
+- same method name.
+- same return datatype.
+
+### Method Overloading:
+Overloading happens when we have two methods in one class, with 
+**the same name**, then second one can overload on the first one, and it can have different variables and datatypes. like this:
+```
+public class Bank_ABC {
+	int getInterestRate() {
+		return 0;
+	}
+	int gerInterestRate(int adf) {
+		return adf * 2;
+	}
+}
+```
+### Abstract Methods and Classes:
+An abstract class, is a class which cannot be instantiated. For example, in the example of Banks, we can make Bank class, as an abstract class because it does have the general info and functionality, but the sub classes can be instantiated, and inherit from Banks.
+
+In order to make the Bank class abstract we just say:
+```
+abstract public class Bank {
+
+}
+```
+as soon as we add the words abstract nobody can instantiate it like this:
+```
+Bank sample = new Bank();
+>this fails
+```
+In order to make methods abstract there are two conditions:
+
+1- The class in which the method belong to, has to be abstract.
+when we define the abstract method in the super class, we don't need to write the implementation of the method. we just say:
+```
+abstract public class Bank {
+	abtract int getInterestRate();
+}
+```
+But when we make sub classes inheriting from Bank super class, we will have to define getInterestRate() definition.
+
+### Interfaces in JAVA:
+An interface is the same as an abstract class. They both cannot be instantiated. Instead of saying:
+```
+abstract public class Bank {
+	abstract int getInterestRate()
+}
+```
+we can say:
+```
+public interface Bank {
+	int getInterestRate();
+}
+```
+when we define the interface, all the methods inside it will be abstract by nature.
+
+Also, when we want to define sub classes, we cannot extend the interface. Instead, we implement it. like this:
+```
+public class Bank_ABC implements Bank {
+   int getInterestRate() {
+		return 0;
+	} 
+}
+```
+Because we defined Bank as interface, the method getInterestRate inside it is abstract, so we need to define it under Bank_ABC class.
+
+- If we want to inherit interface inside another interface, then we again use extends keyword.
 
 
 
